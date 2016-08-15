@@ -1,0 +1,40 @@
+1. No need to use FaultContract since client will use return object's "IsValid" and "ErrorMessage" properties 
+to get the error information from a service
+
+2. For undeclared SOAP faults, add <serviceDebug includeExceptionDetailInFaults="true"/> in configuration file
+
+3. To test transaction rollback, make two input sql parameters' name the same to generate errors
+
+4. The maximum message size quota for incoming messages (65536) has been exceeded. To increase the quota, 
+use the MaxReceivedMessageSize property on the appropriate binding element. 
+
+set MaxReceivedMessageSize = 655360
+
+5. For TransferMode.Buffered, MaxReceivedMessageSize and MaxBufferSize must be the same value.
+
+set MaxBufferSize = 655360
+
+6. In order to make self-signed certificate working, using fully qualified domain name in URL
+
+7. change httpGetEnabled to httpsGetEnabled
+
+8. If you specify Default domain for IIS Basic Authentication, it actually authenticate domain user via AD
+
+9. In the Windows 2008 R2 Server Manager, expand Roles, right-click Web Server (IIS), and then click Add Role Services
+   In the Security area, click to select the following check boxes:
+    Basic Authentication
+	IP and Domain Restrictions
+
+10. When using Windows Authentication with basicHttpBinding, choose NTLM as the only provider in IIS.
+
+
+
+
+
+
+
+
+
+
+
+

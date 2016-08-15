@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" elementFormDefault="qualified" targetNamespace="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="HelloWorld">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="HelloWorldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChiroPreAuth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:ChiroAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ChiroAuthRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AuthRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="InitialInjuryDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="VisitsToDate" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ThirdDiagnosisCode" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DailyLivingRating" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RangeOfMotionRating" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsCoTreat" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="FriScore" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasStroke" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasChronicPain" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PriorAuthNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InjuryType" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AuthRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IvrCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubscriberId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberSeq" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MemberId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasReferral" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RequestType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Condition" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InitialVisitDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumberOfVisits" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NumberOfWeeks" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrimaryDiagnosisCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SecondaryDiagnosisCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PainRating" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasDiabetes" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasCancer" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsSmoker" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsOverweight" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MaxVisits" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ActualVisits" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AcceptAuthReduction" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SendToReview" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ActualVisitStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ActualVisitEndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VisitYearType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasExercise" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasDepression" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ApplicationId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ClientAuthNumber" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsNaviNet" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetChiroPreAuthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetChiroPreAuthResult" type="tns:ChiroAuthResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ChiroAuthResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AuthResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="BcbsmaNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AuthResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="AuthNumber" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="VisitsApproved" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DaysApproved" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DateApprovedFrom" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DateApprovedThru" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DateApproved" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsApproveReduction" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DecisionText" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthStatus" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ClientAuthNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPtotPreAuth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:PtotAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PtotAuthRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AuthRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="WorkRelated" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AutoAccident" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="OtherInjury" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PostSurgery" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="NoInjury" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PriorTreatment" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UpperExtremity" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LowerExtremity" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LsSpine" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="CtSpine" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HandWrist" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="OtherRegion" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PsfsScore" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasPainHistory" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsDrinker" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TakeOpioids" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasConfidence" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LimitCommunication" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasCns" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasCardiovascular" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasLungDisease" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderAddress" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderCity" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderState" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderZipCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderPhone" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderFax" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderDiagnosis" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ReferralDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RealAuthTypeId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ServiceType" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPtotPreAuthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetPtotPreAuthResult" type="tns:PtotAuthResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PtotAuthResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AuthResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRrsQuestions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="questionSet" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRrsQuestionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetRrsQuestionsResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRrsEntryLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="callStarted" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sessionId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="variableName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="entryString" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="validationResult" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="isBcbsma" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRrsEntryLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="InsertRrsEntryLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertAuthSsoLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="authNumber" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ssoData" type="tns:AuthSsoData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AuthSsoData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderingPhysicianId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderingPhysicianNpi" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderingVendorId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderingVendorNpi" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PerformingPhysicianId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PerformingPhysicianNpi" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PerformingVendorId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PerformingVendorNpi" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FacilityId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FacilityNpi" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsertAuthSsoLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="InsertAuthSsoLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProviderFax">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="locationSeq" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fax" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProviderFaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="UpdateProviderFaxResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDiagCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="isIvr" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDiagCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckDiagCodeResult" type="tns:DiagCodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DiagCodeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagCode" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertInvalidDiagCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertInvalidDiagCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="InsertInvalidDiagCodeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMedicareDiagCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="code" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="codeType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMedicareDiagCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckMedicareDiagCodeResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProvider">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="isIvr" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="userId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProviderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckProviderResult" type="tns:ProviderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ProviderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LocationSeq" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Address" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ZipCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Fax" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TinLast4" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight1" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight2" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight3" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight4" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight5" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight6" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IvrRight7" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsBcbsma" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PlayBcbsmaIntro" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PlayExcludeAlphaPrefix" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Address1" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Address2" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IvrCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Suffix" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthTypeId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckProviderFromSso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="clientPrefix" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="requestedStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckProviderFromSsoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckProviderFromSsoResult" type="tns:ProviderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="isIvr" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberId" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckMemberResult" type="tns:MemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MemberResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="MemberName" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="MaxVisits" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ActualVisits" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SubscriberId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MemberSeq" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PlanId" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ActualVisitStartDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ActualVisitEndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="VisitYearType" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UnmanagedVisits" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ClaimsAddressError" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ClaimsAddressId" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ClaimsAddress" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ErrorNumber" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsMedicareAdvantage" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrefixSubscriberId" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UseCareRegistration" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RealAuthTypeId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckMemberFromWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="authTypeId" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMemberFromWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckMemberFromWebResult" type="tns:MemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMemberFromSso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="clientPrefix" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="blindKey" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMemberFromSsoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckMemberFromSsoResult" type="tns:MemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreCheckMemberInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreCheckMemberInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="PreCheckMemberInfoResult" type="tns:MemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthTypeFromSelectedServiceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="prefixSubscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="serviceType" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthTypeFromSelectedServiceTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetAuthTypeFromSelectedServiceTypeResult" type="tns:MemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckFriScore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="friScore" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckFriScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckFriScoreResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPsfsScore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="psfsScore" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPsfsScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CheckPsfsScoreResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="authNumber" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetAuthResultResult" type="tns:AuthResultResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AuthResultResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthTypeId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SubscriberId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MemberSeq" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="GroupId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DivisionId" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="GroupCoverageStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NetworkId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProviderLocationSeq" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReferredById" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReferredByName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CaseIndexRequested" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="VisitsRequested" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PreviousTreatment" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OtherInsurance" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TreatmentType" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagCode1" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagCode2" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="NewOrExtended" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CaseIndexApproved" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="VisitsApproved" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ApprovedFrom" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ApprovedThru" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AmountApproved" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="VisitsActual" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AmountActual" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="FriScore" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Notes" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="EntryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EntryUser" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UpdateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UpdateUser" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CaseNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagCode3" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagCode4" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Status" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Closed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CaseIndexActual" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AmountRequested" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DrgCategory" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DrgCode" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RequestedFrom" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RequestedThru" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ApprovedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Narrative" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="WorkRelated" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AutoAccident" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuditFlag" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="InjuryDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Region" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TplanPrinted" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TplanPrintedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TplanPrintedUser" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="VisitsToDate" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="AdditionalVisits" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PlanId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IvrFlag" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Score" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="FaxDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FaxUser" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FaxId" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RecordsReceivedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DenialLetterPrinted" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DenialLetterDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DenialLetterUser" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Category" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ExtensionGranted" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasDiabetes" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasStroke" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasCancer" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsOverweight" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsSmoker" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasChronicPain" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EdiAuthNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BcbsmaNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EdiCtrlNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InUseBy" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderAddress" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderCity" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderState" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderZipCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderPhone" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderFax" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderingProviderDiagnosis" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ReferralDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PostSurgery" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="OtherInjury" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="NoInjury" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PriorTreatment" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="UpperExtremity" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LowerExtremity" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LsSpine" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="CtSpine" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HandWrist" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="OtherRegion" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PsfsScore" type="xs:decimal" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasPainHistory" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsDrinker" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TakeOpioids" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasExercise" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasConfidence" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasDepression" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="LimitCommunication" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasCns" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasCardiovascular" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasLungDisease" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetProviderInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetProviderInfoResult" type="tns:ProviderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderFax">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderFaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetProviderFaxResult" type="tns:ProviderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateBcbsmaNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="bcbsmaNumber" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateBcbsmaNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ValidateBcbsmaNumberResult" type="tns:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiagnosticCodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="keyWord" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiagnosticCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetDiagnosticCodesResult" type="tns:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProviderAddressList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderAddressListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetProviderAddressListResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderAddressListFromSso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="requestedStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProviderAddressListFromSsoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetProviderAddressListFromSsoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMatchedPtotAuthType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="requestedStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMatchedPtotAuthTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetAllMatchedPtotAuthTypeResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMatchedPtotAuthTypeFromSso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="clientPrefix" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="blindKey" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="requestedStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMatchedPtotAuthTypeFromSsoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetAllMatchedPtotAuthTypeFromSsoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllServiceType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ivrCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="prefixSubscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="requestedStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllServiceTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetAllServiceTypeResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasDuplicateClientAuthNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="clientAuthNumber" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="providerId" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasDuplicateClientAuthNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="HasDuplicateClientAuthNumberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHighmarkMemberData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="subscriberId" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="memberSeq" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="inquiryDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHighmarkMemberDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetHighmarkMemberDataResult" type="tns:HighmarkMemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HighmarkMemberResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="SubscriberId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MemberSequence" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AuthNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CopcId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CoptC" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Eal" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IsErisa" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="GroupNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="GroupName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="GroupClientNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PartnerId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Lob" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetHighmarkMemberDataByAuth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="authNumber" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="inquiryDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHighmarkMemberDataByAuthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetHighmarkMemberDataByAuthResult" type="tns:HighmarkMemberResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

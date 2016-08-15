@@ -1,0 +1,32 @@
+bin/*
+obj/*
+*/bin/*
+*/obj/*
+*/*/bin/*
+*/*/obj/*
+_ReSharper.*/
+*/_ReSharper.*/
+*.user
+*.suo
+*.log
+*.dotCover
+log_searchuser_create.txt
+*.msi
+*.exe
+/*.DotSettings
+*.mdf
+*.ldf
+packages/Emma*
+packages/Gateway*
+packages/MSRB*
+packages/Dataport*/src
+NDependOut/NDependReportFiles/*
+NDependOut/*.xml
+NDependOut/*.html
+NDependOut/*.ndar
+!.nuget/*
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*

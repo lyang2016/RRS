@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PreAuthManager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" location="http://localhost:9001/RRSService?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IPreAuthManager" type="i0:IPreAuthManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChiroPreAuth">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetChiroPreAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtotPreAuth">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetPtotPreAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRrsQuestions">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetRrsQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRrsEntryLog">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/InsertRrsEntryLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAuthSsoLog">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/InsertAuthSsoLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProviderFax">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/UpdateProviderFax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDiagCode">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckDiagCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInvalidDiagCode">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/InsertInvalidDiagCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMedicareDiagCode">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMedicareDiagCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProvider">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProviderFromSso">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckProviderFromSso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProviderFromAngel">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckProviderFromAngel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMember">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMemberFromWeb">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMemberFromWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMemberFromSso">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMemberFromSso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMemberFromAngel">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMemberFromAngel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreCheckMemberInfo">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/PreCheckMemberInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthTypeFromSelectedServiceType">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAuthTypeFromSelectedServiceType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFriScore">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckFriScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPsfsScore">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckPsfsScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthResult">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAuthResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderInfo">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderFax">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderFax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBcbsmaNumber">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/ValidateBcbsmaNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnosticCodes">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetDiagnosticCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderAddressList">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderAddressList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderAddressListFromSso">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderAddressListFromSso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMatchedPtotAuthType">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAllMatchedPtotAuthType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMatchedPtotAuthTypeFromSso">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAllMatchedPtotAuthTypeFromSso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceType">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAllServiceType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimsAddress">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetClaimsAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasDuplicateClientAuthNumber">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/HasDuplicateClientAuthNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHighmarkMemberData">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetHighmarkMemberData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHighmarkMemberDataByAuth">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetHighmarkMemberDataByAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBcbsmaProviderList">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetBcbsmaProviderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBcbsmaSso">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/ValidateBcbsmaSso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBcbsmaProviderGroup">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetBcbsmaProviderGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBcbsmaProviderInfo">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetBcbsmaProviderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBcbsmaMember">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckBcbsmaMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBcbsmaProviderReminder">
+      <soap:operation soapAction="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetBcbsmaProviderReminder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PreAuthManager">
+    <wsdl:port name="BasicHttpBinding_IPreAuthManager" binding="tns:BasicHttpBinding_IPreAuthManager">
+      <soap:address location="http://localhost:9001/RRSService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

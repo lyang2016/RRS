@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5615ccae-837e-495c-a230-df8847d3b143" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://corpcamappdev.amhc.amhealthways.net/RRSWebHost/preAuthManager.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PreAuthManager.xsd" MetadataType="Schema" ID="4647e66d-d591-4c0c-a86f-a024f7429e8e" SourceId="1" SourceUrl="https://corpcamappdev.amhc.amhealthways.net/RRSWebHost/PreAuthManager.svc?xsd=xsd0" />
+    <MetadataFile FileName="PreAuthManager.wsdl" MetadataType="Wsdl" ID="92f1eafb-3a61-499f-ac79-f8bb39195a4d" SourceId="1" SourceUrl="https://corpcamappdev.amhc.amhealthways.net/RRSWebHost/PreAuthManager.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PreAuthManager.disco" MetadataType="Disco" ID="9dae7f6a-b5d9-41c9-8727-a9c959afac59" SourceId="1" SourceUrl="https://corpcamappdev.amhc.amhealthways.net/RRSWebHost/PreAuthManager.svc?disco" />
+    <MetadataFile FileName="PreAuthManager1.wsdl" MetadataType="Wsdl" ID="f1fd48f0-02e9-40b6-9a34-73fe6ce8b110" SourceId="1" SourceUrl="https://corpcamappdev.amhc.amhealthways.net/RRSWebHost/PreAuthManager.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

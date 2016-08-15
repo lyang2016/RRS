@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/Imports">
+      <xsd:import schemaLocation="https://corpcamappdev.amhc.amhealthways.net/RRSWebHost/PreAuthManager.svc?xsd=xsd0" namespace="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPreAuthManager_HelloWorld_InputMessage">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_HelloWorld_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetChiroPreAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChiroPreAuth" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetChiroPreAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChiroPreAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetPtotPreAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtotPreAuth" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetPtotPreAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtotPreAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetRrsQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRrsQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetRrsQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRrsQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_InsertRrsEntryLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRrsEntryLog" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_InsertRrsEntryLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRrsEntryLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_InsertAuthSsoLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAuthSsoLog" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_InsertAuthSsoLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAuthSsoLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_UpdateProviderFax_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderFax" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_UpdateProviderFax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderFaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckDiagCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDiagCode" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckDiagCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDiagCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_InsertInvalidDiagCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInvalidDiagCode" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_InsertInvalidDiagCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInvalidDiagCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMedicareDiagCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMedicareDiagCode" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMedicareDiagCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMedicareDiagCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProvider" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckProviderFromSso_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProviderFromSso" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckProviderFromSso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckProviderFromSsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMember" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMemberFromWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberFromWeb" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMemberFromWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberFromWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMemberFromSso_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberFromSso" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckMemberFromSso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberFromSsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_PreCheckMemberInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreCheckMemberInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_PreCheckMemberInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreCheckMemberInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAuthTypeFromSelectedServiceType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthTypeFromSelectedServiceType" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAuthTypeFromSelectedServiceType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthTypeFromSelectedServiceTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckFriScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckFriScore" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckFriScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckFriScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckPsfsScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPsfsScore" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_CheckPsfsScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPsfsScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAuthResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthResult" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAuthResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderFax_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderFax" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderFax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderFaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_ValidateBcbsmaNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBcbsmaNumber" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_ValidateBcbsmaNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBcbsmaNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetDiagnosticCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiagnosticCodes" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetDiagnosticCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiagnosticCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderAddressList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderAddressList" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderAddressList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderAddressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderAddressListFromSso_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderAddressListFromSso" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetProviderAddressListFromSso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderAddressListFromSsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAllMatchedPtotAuthType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMatchedPtotAuthType" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAllMatchedPtotAuthType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMatchedPtotAuthTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAllMatchedPtotAuthTypeFromSso_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMatchedPtotAuthTypeFromSso" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAllMatchedPtotAuthTypeFromSso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMatchedPtotAuthTypeFromSsoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAllServiceType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServiceType" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetAllServiceType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServiceTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_HasDuplicateClientAuthNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasDuplicateClientAuthNumber" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_HasDuplicateClientAuthNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasDuplicateClientAuthNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetHighmarkMemberData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHighmarkMemberData" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetHighmarkMemberData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHighmarkMemberDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetHighmarkMemberDataByAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHighmarkMemberDataByAuth" />
+  </wsdl:message>
+  <wsdl:message name="IPreAuthManager_GetHighmarkMemberDataByAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHighmarkMemberDataByAuthResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPreAuthManager">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/HelloWorld" message="tns:IPreAuthManager_HelloWorld_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/HelloWorldResponse" message="tns:IPreAuthManager_HelloWorld_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChiroPreAuth">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetChiroPreAuth" message="tns:IPreAuthManager_GetChiroPreAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetChiroPreAuthResponse" message="tns:IPreAuthManager_GetChiroPreAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtotPreAuth">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetPtotPreAuth" message="tns:IPreAuthManager_GetPtotPreAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetPtotPreAuthResponse" message="tns:IPreAuthManager_GetPtotPreAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRrsQuestions">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetRrsQuestions" message="tns:IPreAuthManager_GetRrsQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetRrsQuestionsResponse" message="tns:IPreAuthManager_GetRrsQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRrsEntryLog">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/InsertRrsEntryLog" message="tns:IPreAuthManager_InsertRrsEntryLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/InsertRrsEntryLogResponse" message="tns:IPreAuthManager_InsertRrsEntryLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAuthSsoLog">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/InsertAuthSsoLog" message="tns:IPreAuthManager_InsertAuthSsoLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/InsertAuthSsoLogResponse" message="tns:IPreAuthManager_InsertAuthSsoLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProviderFax">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/UpdateProviderFax" message="tns:IPreAuthManager_UpdateProviderFax_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/UpdateProviderFaxResponse" message="tns:IPreAuthManager_UpdateProviderFax_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDiagCode">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckDiagCode" message="tns:IPreAuthManager_CheckDiagCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckDiagCodeResponse" message="tns:IPreAuthManager_CheckDiagCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInvalidDiagCode">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/InsertInvalidDiagCode" message="tns:IPreAuthManager_InsertInvalidDiagCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/InsertInvalidDiagCodeResponse" message="tns:IPreAuthManager_InsertInvalidDiagCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMedicareDiagCode">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMedicareDiagCode" message="tns:IPreAuthManager_CheckMedicareDiagCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckMedicareDiagCodeResponse" message="tns:IPreAuthManager_CheckMedicareDiagCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProvider">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckProvider" message="tns:IPreAuthManager_CheckProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckProviderResponse" message="tns:IPreAuthManager_CheckProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProviderFromSso">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckProviderFromSso" message="tns:IPreAuthManager_CheckProviderFromSso_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckProviderFromSsoResponse" message="tns:IPreAuthManager_CheckProviderFromSso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMember">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMember" message="tns:IPreAuthManager_CheckMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckMemberResponse" message="tns:IPreAuthManager_CheckMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMemberFromWeb">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMemberFromWeb" message="tns:IPreAuthManager_CheckMemberFromWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckMemberFromWebResponse" message="tns:IPreAuthManager_CheckMemberFromWeb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMemberFromSso">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckMemberFromSso" message="tns:IPreAuthManager_CheckMemberFromSso_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckMemberFromSsoResponse" message="tns:IPreAuthManager_CheckMemberFromSso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreCheckMemberInfo">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/PreCheckMemberInfo" message="tns:IPreAuthManager_PreCheckMemberInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/PreCheckMemberInfoResponse" message="tns:IPreAuthManager_PreCheckMemberInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthTypeFromSelectedServiceType">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAuthTypeFromSelectedServiceType" message="tns:IPreAuthManager_GetAuthTypeFromSelectedServiceType_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetAuthTypeFromSelectedServiceTypeResponse" message="tns:IPreAuthManager_GetAuthTypeFromSelectedServiceType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFriScore">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckFriScore" message="tns:IPreAuthManager_CheckFriScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckFriScoreResponse" message="tns:IPreAuthManager_CheckFriScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPsfsScore">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/CheckPsfsScore" message="tns:IPreAuthManager_CheckPsfsScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/CheckPsfsScoreResponse" message="tns:IPreAuthManager_CheckPsfsScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthResult">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAuthResult" message="tns:IPreAuthManager_GetAuthResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetAuthResultResponse" message="tns:IPreAuthManager_GetAuthResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderInfo">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderInfo" message="tns:IPreAuthManager_GetProviderInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetProviderInfoResponse" message="tns:IPreAuthManager_GetProviderInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderFax">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderFax" message="tns:IPreAuthManager_GetProviderFax_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetProviderFaxResponse" message="tns:IPreAuthManager_GetProviderFax_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBcbsmaNumber">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/ValidateBcbsmaNumber" message="tns:IPreAuthManager_ValidateBcbsmaNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/ValidateBcbsmaNumberResponse" message="tns:IPreAuthManager_ValidateBcbsmaNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnosticCodes">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetDiagnosticCodes" message="tns:IPreAuthManager_GetDiagnosticCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetDiagnosticCodesResponse" message="tns:IPreAuthManager_GetDiagnosticCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderAddressList">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderAddressList" message="tns:IPreAuthManager_GetProviderAddressList_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetProviderAddressListResponse" message="tns:IPreAuthManager_GetProviderAddressList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderAddressListFromSso">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetProviderAddressListFromSso" message="tns:IPreAuthManager_GetProviderAddressListFromSso_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetProviderAddressListFromSsoResponse" message="tns:IPreAuthManager_GetProviderAddressListFromSso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMatchedPtotAuthType">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAllMatchedPtotAuthType" message="tns:IPreAuthManager_GetAllMatchedPtotAuthType_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetAllMatchedPtotAuthTypeResponse" message="tns:IPreAuthManager_GetAllMatchedPtotAuthType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMatchedPtotAuthTypeFromSso">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAllMatchedPtotAuthTypeFromSso" message="tns:IPreAuthManager_GetAllMatchedPtotAuthTypeFromSso_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetAllMatchedPtotAuthTypeFromSsoResponse" message="tns:IPreAuthManager_GetAllMatchedPtotAuthTypeFromSso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceType">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetAllServiceType" message="tns:IPreAuthManager_GetAllServiceType_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetAllServiceTypeResponse" message="tns:IPreAuthManager_GetAllServiceType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasDuplicateClientAuthNumber">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/HasDuplicateClientAuthNumber" message="tns:IPreAuthManager_HasDuplicateClientAuthNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/HasDuplicateClientAuthNumberResponse" message="tns:IPreAuthManager_HasDuplicateClientAuthNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHighmarkMemberData">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetHighmarkMemberData" message="tns:IPreAuthManager_GetHighmarkMemberData_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetHighmarkMemberDataResponse" message="tns:IPreAuthManager_GetHighmarkMemberData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHighmarkMemberDataByAuth">
+      <wsdl:input wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/GetHighmarkMemberDataByAuth" message="tns:IPreAuthManager_GetHighmarkMemberDataByAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://corpcamapp.amhc.amhealthways.net/RRSWebHost/IPreAuthManager/GetHighmarkMemberDataByAuthResponse" message="tns:IPreAuthManager_GetHighmarkMemberDataByAuth_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

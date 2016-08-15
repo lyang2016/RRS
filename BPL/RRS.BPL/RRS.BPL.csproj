@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09DC7A92-91DC-469F-A7E3-F86EE0D4A8AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRS.BPL</RootNamespace>
+    <AssemblyName>RRS.BPL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthReviewChecker\DecisionTypeChecker.cs" />
+    <Compile Include="AuthReviewChecker\DivisionPendChecker.cs" />
+    <Compile Include="AuthReviewChecker\DrgChecker.cs" />
+    <Compile Include="AuthReviewChecker\FailToPreAuthChecker.cs" />
+    <Compile Include="AuthReviewChecker\FutureAuthsChecker.cs" />
+    <Compile Include="AuthReviewChecker\ImprovementChecker.cs" />
+    <Compile Include="AuthReviewChecker\MedicareChecker.cs" />
+    <Compile Include="AuthReviewChecker\MemberDeniedChecker.cs" />
+    <Compile Include="AuthReviewChecker\MemberPendChecker.cs" />
+    <Compile Include="AuthReviewChecker\OtherProvidersChecker.cs" />
+    <Compile Include="AuthReviewChecker\PatientAgeChecker.cs" />
+    <Compile Include="AuthReviewChecker\PcpReferralChecker.cs" />
+    <Compile Include="AuthReviewChecker\PendingAuthChecker.cs" />
+    <Compile Include="AuthReviewChecker\PlanMaxChecker.cs" />
+    <Compile Include="AuthReviewChecker\PlanMaxContinuationChecker.cs" />
+    <Compile Include="AuthReviewChecker\PlanMaxInitialChecker.cs" />
+    <Compile Include="AuthReviewChecker\PreviousAuthsChecker.cs" />
+    <Compile Include="AuthReviewChecker\RecentAuthChecker.cs" />
+    <Compile Include="AuthReviewChecker\RetroReviewChecker.cs" />
+    <Compile Include="AuthReviewChecker\SubscriberPendChecker.cs" />
+    <Compile Include="AuthReviewChecker\VisitsToDateChecker.cs" />
+    <Compile Include="AuthReviewChecker\WeeksChecker.cs" />
+    <Compile Include="ChiroPreAuthProcessor.cs" />
+    <Compile Include="DiagCodeController.cs" />
+    <Compile Include="AuthReviewChecker\GroupPendChecker.cs" />
+    <Compile Include="AuthReviewChecker\IAuthReviewChecker.cs" />
+    <Compile Include="IPreAuthProcessor.cs" />
+    <Compile Include="MemberController.cs" />
+    <Compile Include="PreAuthController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderController.cs" />
+    <Compile Include="AuthReviewChecker\ProviderPendChecker.cs" />
+    <Compile Include="AuthReviewChecker\WorkInjuryChecker.cs" />
+    <Compile Include="PtotPreAuthProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BEL\RRS.BEL\RRS.BEL.csproj">
+      <Project>{B3D623B5-3B41-455E-ADDE-A2CFA50E1491}</Project>
+      <Name>RRS.BEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\RRS.DAL\RRS.DAL.csproj">
+      <Project>{078650A5-6254-4461-856D-8A28F17862EB}</Project>
+      <Name>RRS.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

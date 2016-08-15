@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df424bf7-a179-44d8-bbed-32dd6d037951" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9001/RRSService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RRSService.disco" MetadataType="Disco" ID="e7111dc1-5404-4014-8e1f-afb7c8caa707" SourceId="1" SourceUrl="http://localhost:9001/RRSService?disco" />
+    <MetadataFile FileName="PreAuthManager.wsdl" MetadataType="Wsdl" ID="8ad221e7-7114-422f-8695-6e4a588daeea" SourceId="1" SourceUrl="http://localhost:9001/RRSService?wsdl" />
+    <MetadataFile FileName="RRSService.wsdl" MetadataType="Wsdl" ID="d53f5ad3-abfc-4e56-8b93-731704e36ef8" SourceId="1" SourceUrl="http://localhost:9001/RRSService?wsdl=wsdl0" />
+    <MetadataFile FileName="RRSService.xsd" MetadataType="Schema" ID="44da2d09-9218-4dab-9cd6-c0b190643a59" SourceId="1" SourceUrl="http://localhost:9001/RRSService?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
